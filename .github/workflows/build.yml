@@ -18,6 +18,12 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          api-level: 21
+
+      - name: Setup Android licenses
+        run: yes | sdkmanager --licenses
+
 
       - name: Make Gradle executable
         run: chmod +x gradlew
